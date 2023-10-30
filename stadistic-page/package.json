@@ -1,0 +1,32 @@
+{
+  "name": "stadistic-page",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^2.1.13",
+    "@nextui-org/use-infinite-scroll": "^2.1.1",
+    "@react-stately/data": "^3.10.3",
+    "csv-parse": "^5.5.2",
+    "csv-parser": "^3.0.0",
+    "fs": "^0.0.1-security",
+    "mongoose": "^7.6.3",
+    "next": "13.5.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.11.0",
+    "swr": "^2.2.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.6",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3"
+  }
+}
