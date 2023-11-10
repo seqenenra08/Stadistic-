@@ -1,8 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useRouter } from 'next/navigation'
+import { contextData } from "./context/contextData"
 
 export default function Home() {
+  const router = useRouter()
   const [file, setFile] = useState();
+  const {data, cambioData} = useContext(contextData)
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -21,9 +25,14 @@ export default function Home() {
         body: form,
       });
 
-      const data = await res.json();
-      console.log(data);
-      //window.location.href = "/main-page";
+      const dataRes = await res.json();
+      let array = [];
+      dataRes.response.map(e => {
+        array.push(e)
+      })
+
+      cambioData(array)
+      router.push('/main-page')
     } catch (error) {
       console.log(error);
     }
@@ -32,7 +41,7 @@ export default function Home() {
   return (
     <div className="flex h-screen justify-center items-center flex-col">
       <form onSubmit={handleSubmit} className="bg-zinc-950 p-5">
-        <h1 className="text-4xl text-center my-10 text-white">
+        <h1 className="text-4xl text-center my-10 text-zinc-100">
           Upload a file .csv
         </h1>
         <input

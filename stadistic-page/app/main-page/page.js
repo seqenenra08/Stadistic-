@@ -1,5 +1,5 @@
-import TableDates from "../components/tableDates";
+import TableData from "../components/table"
 
-export default function Home() {
-  return <TableDates></TableDates>;
+export default async function Home() {
+  return <TableData></TableData>
 }

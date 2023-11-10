@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import FunctionDataContex from "./context/contextData";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,10 @@ export default function RootLayout({ children }) {
         <link rel="shortcut icon" href="#" />
       </head>
 
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {" "}
+        <FunctionDataContex>{children}</FunctionDataContex>
+      </body>
     </html>
   );
 }
