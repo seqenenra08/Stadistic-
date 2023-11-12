@@ -2,6 +2,7 @@ import { writeFile } from "fs/promises";
 import { NextResponse } from "next/server";
 import path from "path";
 import { readFileSync } from "fs";
+import { parse } from "csv-parse/sync";
 
 export async function POST(request) {
   try {
@@ -12,7 +13,7 @@ export async function POST(request) {
     const filePath = path.join(process.cwd(), "public", file.name);
     await writeFile(filePath, buffer);
 
-    const fileContent = readFileSync(filePath);
+    const fileContent = readFileSync(filePath); 
 
     return new Response(
       JSON.stringify({
