@@ -17,7 +17,6 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={inter.className}>
-        {" "}
         <FunctionDataContex>{children}</FunctionDataContex>
       </body>
     </html>
